@@ -16,3 +16,7 @@
 - error handling.
 - sequelize to perform ORM.
 - Jest unit test
+
+###Missed for time constrain
+- API documentation using something like swagger or so.
+- Only service files are not covered with unit test.

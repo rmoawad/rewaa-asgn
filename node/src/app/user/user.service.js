@@ -37,14 +37,6 @@ async function create(params) {
     await db.User.create(params);
 }
 
-// helper functions
-
-async function getUser(id) {
-    const user = await db.User.findByPk(id);
-    if (!user) throw 'User not found';
-    return user;
-}
-
 function omitHash(user) {
     const { hashedPassword, ...userWithoutHash } = user;
     return userWithoutHash;

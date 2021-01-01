@@ -4,4 +4,4 @@
 >> Each  project has it's ReadMe file for build and run
 
 
-Going to enrich Node project with unit tests once I have time
+Some files in node project are covered with unit test (using jest)

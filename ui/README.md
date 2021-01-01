@@ -1,4 +1,4 @@
-##Rewaa asgn UI PART
+##Rewaa asgn UI part
 
 ###Steps to run
 - start backend project (follow steps in node project readMe file)
@@ -13,3 +13,5 @@
 - create/Update/Delete of product
 - ngrx is used as state management.
 
+###Missed for time constrain
+- Unit tests coverage isn't done for UI part.
