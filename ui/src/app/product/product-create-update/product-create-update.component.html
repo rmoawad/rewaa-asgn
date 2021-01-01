@@ -1,0 +1,56 @@
+﻿<div class="card mt-4 container-div">
+  <div class="card-body">
+    <h3 *ngIf="!id">Add Product</h3>
+    <h3 *ngIf="!!id">Update Product</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-7">
+          <label>Name</label>
+          <input type="text" formControlName="name" class="form-control"
+                 [ngClass]="{ 'is-invalid': submitted && formFields.name.errors }"/>
+          <div *ngIf="submitted && formFields.name.errors" class="invalid-feedback">
+            <div *ngIf="formFields.name.errors.required">Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-7">
+          <label>Stock Size</label>
+          <input type="number" formControlName="stockSize" class="form-control"
+                 [ngClass]="{ 'is-invalid': submitted && formFields.stockSize.errors }"/>
+          <div *ngIf="submitted && formFields.stockSize.errors" class="invalid-feedback">
+            <div *ngIf="formFields.stockSize.errors.required">Stock Size is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-7">
+          <label>Price</label>
+          <input type="number" formControlName="price" class="form-control"
+                 [ngClass]="{ 'is-invalid': submitted && formFields.price.errors }"/>
+          <div *ngIf="submitted && formFields.price.errors" class="invalid-feedback">
+            <div *ngIf="formFields.price.errors.required">Price is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-7">
+          <label>Description</label>
+          <br>
+          <textarea formControlName="description" rows="5" cols="50" wrap="soft"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Save
+        </button>
+        <button (click)="close()" class="btn btn-warning">Cancel</button>
+      </div>
+    </form>
+    <div align="center">
+      <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+      <div *ngIf="success" class="alert alert-success mt-3 mb-0">{{success}}</div>
+    </div>
+  </div>
+</div>

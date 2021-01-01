@@ -1,0 +1,28 @@
+﻿<div class="card mt-4">
+    <div class="card-body">
+        <h3>Products List</h3>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <button (click)="createOrUpdateProduct(undefined)" class="btn btn-sm btn-primary add-product-btn">Add Product</button>
+
+        <table class="table table-striped" *ngIf="products$ | async">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of (products$ | async)">
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>
+                <button (click)="createOrUpdateProduct(product.id)" class="btn btn-sm btn-primary">Edit</button>
+                <button (click)="viewDetails(product.id)" class="btn btn-sm btn-success">Details</button>
+                <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-danger btn-delete-product">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

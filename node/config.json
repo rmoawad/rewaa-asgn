@@ -1,0 +1,11 @@
+﻿{
+    "database": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": "test123",
+        "database": "rewaa"
+    },
+    "secret": "password-key-sec",
+    "port": 4000
+}

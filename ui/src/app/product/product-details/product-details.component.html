@@ -1,0 +1,18 @@
+<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<div *ngIf="!!product" mat-dialog-content class="container-class">
+  <h3 mat-dialog-title>{{product.name}}</h3>
+  <hr>
+  <label>Stock: {{product.stockSize}}</label>
+  <hr>
+  <label>Price: {{product.price}}</label>
+  <hr>
+  Description:
+  <pre>
+    {{product.description}}
+  </pre>
+
+</div>
+
+<div>
+  <button (click)="onCloseClick()" class="btn btn-sm btn-success">Close</button>
+</div>
