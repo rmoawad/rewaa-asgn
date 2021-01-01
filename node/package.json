@@ -1,7 +1,8 @@
 {
     "name": "Rewaa node API",
     "scripts": {
-        "start": "node src/app/server.js"
+        "start": "node src/app/server.js",
+        "test": "jest --config ./jest.config.json"
     },
     "dependencies": {
         "bcryptjs": "2.4.3",
@@ -14,5 +15,8 @@
         "mysql2": "2.1.0",
         "rootpath": "0.1.2",
         "sequelize": "6.3.4"
+    },
+    "devDependencies": {
+        "jest": "^26.6.3"
     }
 }

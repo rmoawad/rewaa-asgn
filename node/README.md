@@ -15,3 +15,4 @@
 - user and product controllers.
 - error handling.
 - sequelize to perform ORM.
+- Jest unit test
